@@ -65,28 +65,51 @@ export class StackedAreaChart extends BaseChart {
             .attr("font-family", "Bebas Neue")
             .text(this.title);
         
-        let i = 1;
+        //console.log("+++", this.stackedData);
 
+        let i = 1;
+        //console.log("----", this.data_object);
         const animate = () => {
 
             let trans_dur = 0;
             let dur = 0;
 
             if (i > this.data_object.length){ 
-                i = 1;
+                //i = 0;
+                //console.log("Text");
+                //this.g.selectAll(".dynamic-label").remove();
                 return;
             }
-
+            
             layers.data(this.stackedData)
                 .attr("transform", "translate(30, 0)")
-                .transition(5000)
-                .duration(2000)
+                .transition(0)
+                .duration(1000)
                 .attr("d", d => area(d.slice(0, i)))
-                .on("end", animate); // call animate again after transition completes
+                .on("end", () => {
+                                    if (i <= this.data_object.length){
 
-            i++;
+                                        //console.log(i-1, this.data_object[i-1]);
+                                        let month_text = this.data_object[i-1]['month'];
+                                        let data_val = this.stackedData[0][i-1][1];
+                
+                                        this.g.append("text")
+                                            //.attr("class", "dynamic-label")
+                                            .attr("x", this.x(month_text)+40)
+                                            .attr("y", this.y(data_val)+5)
+                                            .attr("font-size", 14)
+                                            .attr("text-anchor", "middle")
+                                            .attr("font-family", "Bebas Neue")
+                                            .text(data_val + "%");
+                                        
+
+                                    }
+                                    animate();
+                                    i++;
+                                    
+                                }); // call animate again after transition completes
+            
         }
-
 
         animate();  
 
@@ -113,8 +136,6 @@ export class StackedAreaChart extends BaseChart {
                 .attr("width", 15)
                 .attr("height", 15)
                 .attr("fill", this.color(d));
-            
-            console.log("?", d, this.color(d.key));
 
             // Text label
             legendRow.append("text")
