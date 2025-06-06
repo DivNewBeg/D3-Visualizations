@@ -18,7 +18,7 @@ export function redrawCharts(chart_width, chart_height){
 
   d3.select("body").selectAll("svg").remove();
 
-  var margin = {left:50,right:50,top:50,bottom:0};
+  var margin = {left:50,right:50,top:100,bottom:0};
   //var chart_width = window.innerWidth/4;//450;
   //var chart_height = window.innerHeight/2;//275;
 
@@ -54,7 +54,7 @@ export function redrawCharts(chart_width, chart_height){
       {
           note: {
               //label: "The Associated Press",
-              title: "Will the River Seine be ready for Paris' 2024 Summer Olympics?",
+              title: "Paris mayor to swim in Seine to prove cleanliness",
               titleClassName: "custom-title",
               labelClassName: "custom-label"
           },
@@ -63,12 +63,11 @@ export function redrawCharts(chart_width, chart_height){
           dy: 0,
           dx: 0,
           month: "Jul-24",
-          url: "https://nypost.com/2024/07/21/world-news/will-the-river-seine-be-ready-for-paris-2024-summer-olympics/"
+          url: "https://www.rte.ie/news/world/2024/0717/1460305-paris-mayor-seine/"
       },
       {
           note: {
-              //label: "The Associated Press (7-Dec-2023)",
-              title: "How the Paris 2024 Summer Olympics are driving the city’s green revolution",
+              title: "Paris 2024 chief pledges to find solutions to keep Olympic surfing in Tahiti after coral damage",
               titleClassName: "custom-title",
               labelClassName: "custom-label"
           },
@@ -77,7 +76,7 @@ export function redrawCharts(chart_width, chart_height){
           dy: 0,
           dx: 0,
           month: "Dec-23",
-          url: "https://www.theguardian.com/artanddesign/2023/dec/31/paris-2024-olympics-green-transformation-anne-hidalgo-clean-seine"
+          url: "https://apnews.com/article/olympics-paris-surfing-tahiti-coral-032662b649a34e3d12bf62c87e2ca727"
       }
   ];
 
@@ -108,8 +107,7 @@ export function redrawCharts(chart_width, chart_height){
   const annotations2 = [
       {
           note: {
-              //label: "The Associated Press",
-              title: "Paris mayor swims in the Seine to showcase improved cleanliness ahead of Olympic events",
+              title: "Olympic men’s triathlon postponed due to high pollution levels in Seine",
               titleClassName: "custom-title",
               labelClassName: "custom-label"
           },
@@ -118,11 +116,10 @@ export function redrawCharts(chart_width, chart_height){
           dy: 0,
           dx: 0,
           month: "Jul-24",
-          url: "https://www.thejournal.ie/paris-mayor-swims-in-seine-showcase-cleanliness-olympic-6439627-Jul2024/"
+          url: "https://www.aljazeera.com/sports/2024/7/30/olympic-mens-triathlon-postponed-due-to-high-pollution-levels-in-seine"
       },
       {
           note: {
-              //label: "The Associated Press (7-Dec-2023)",
               title: "Olympic triathlon swimming leg could be cancelled over Seine water quality",
               titleClassName: "custom-title",
               labelClassName: "custom-label"
