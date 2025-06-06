@@ -146,7 +146,7 @@ export class StackedAreaChart extends BaseChart {
                                                     .style("font-family", "Glacial Indifference")
                                                     .style("fill", "black")
                                                     .style("font-style", "italic")
-                                                    .style("font-size", "10");
+                                                    .style("font-size", "15");
                                                 
                                                 d3.selectAll(".annotation-note-label")
                                                     .style("font-family", "Glacial Indifference")
